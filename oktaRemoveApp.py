@@ -43,7 +43,7 @@ def getAssignments(appId):
 	for user in response:
 		if 'USER' in user['scope']:
 			print(f"Object with scope USER found, User with ID: " + user['id'])
-			removeAssignment(user['id'],appId)
+			removeAssignment(appId,user['id'])
 
 def main():
 	l.info('-- Start')
