@@ -19,8 +19,8 @@ def removeAssignment(appId, userId):
 	result = r.request("DELETE", url, data=payload, headers=headers)
 	if result.status_code != 200:
 		if result.status_code == 204:
-			l.error(f"User not assigned to app, user ID: {userId}")
-			return False
+			l.debug(f"User unassigned from app, user ID: {userId}")
+			return True
 		else:
 			l.error(f"Unable to remove app assignment for user with ID: {userId}")
 			return False
